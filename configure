@@ -719,12 +719,7 @@ DEFS
 mandir
 localedir
 libdir
-psdir
-pdfdir
-dvidir
-htmldir
 infodir
-docdir
 oldincludedir
 includedir
 localstatedir
@@ -815,12 +810,7 @@ sharedstatedir='${prefix}/com'
 localstatedir='${prefix}/var'
 includedir='${prefix}/include'
 oldincludedir='/usr/include'
-docdir='${datarootdir}/doc/${PACKAGE}'
 infodir='${datarootdir}/info'
-htmldir='${docdir}'
-dvidir='${docdir}'
-pdfdir='${docdir}'
-psdir='${docdir}'
 libdir='${exec_prefix}/lib'
 localedir='${datarootdir}/locale'
 mandir='${datarootdir}/man'
@@ -896,15 +886,6 @@ do
     esac
     eval enable_$ac_useropt=no ;;
 
-  -docdir | --docdir | --docdi | --doc | --do)
-    ac_prev=docdir ;;
-  -docdir=* | --docdir=* | --docdi=* | --doc=* | --do=*)
-    docdir=$ac_optarg ;;
-
-  -dvidir | --dvidir | --dvidi | --dvid | --dvi | --dv)
-    ac_prev=dvidir ;;
-  -dvidir=* | --dvidir=* | --dvidi=* | --dvid=* | --dvi=* | --dv=*)
-    dvidir=$ac_optarg ;;
 
   -enable-* | --enable-*)
     ac_useropt=`expr "x$ac_option" : 'x-*enable-\([^=]*\)'`
@@ -946,12 +927,6 @@ do
     ac_prev=host_alias ;;
   -host=* | --host=* | --hos=* | --ho=*)
     host_alias=$ac_optarg ;;
-
-  -htmldir | --htmldir | --htmldi | --htmld | --html | --htm | --ht)
-    ac_prev=htmldir ;;
-  -htmldir=* | --htmldir=* | --htmldi=* | --htmld=* | --html=* | --htm=* \
-  | --ht=*)
-    htmldir=$ac_optarg ;;
 
   -includedir | --includedir | --includedi | --included | --include \
   | --includ | --inclu | --incl | --inc)
@@ -1050,16 +1025,6 @@ do
   | --program-trans=* | --program-tran=* \
   | --progr-tra=* | --program-tr=* | --program-t=*)
     program_transform_name=$ac_optarg ;;
-
-  -pdfdir | --pdfdir | --pdfdi | --pdfd | --pdf | --pd)
-    ac_prev=pdfdir ;;
-  -pdfdir=* | --pdfdir=* | --pdfdi=* | --pdfd=* | --pdf=* | --pd=*)
-    pdfdir=$ac_optarg ;;
-
-  -psdir | --psdir | --psdi | --psd | --ps)
-    ac_prev=psdir ;;
-  -psdir=* | --psdir=* | --psdi=* | --psd=* | --ps=*)
-    psdir=$ac_optarg ;;
 
   -q | -quiet | --quiet | --quie | --qui | --qu | --q \
   | -silent | --silent | --silen | --sile | --sil)
@@ -1201,7 +1166,7 @@ fi
 # Check all directory arguments for consistency.
 for ac_var in	exec_prefix prefix bindir sbindir libexecdir datarootdir \
 		datadir sysconfdir sharedstatedir localstatedir includedir \
-		oldincludedir docdir infodir htmldir dvidir pdfdir psdir \
+		oldincludedir infodir \
 		libdir localedir mandir
 do
   eval ac_val=\$$ac_var
@@ -1365,11 +1330,7 @@ Fine tuning of the installation directories:
   --infodir=DIR           info documentation [DATAROOTDIR/info]
   --localedir=DIR         locale-dependent data [DATAROOTDIR/locale]
   --mandir=DIR            man documentation [DATAROOTDIR/man]
-  --docdir=DIR            documentation root [DATAROOTDIR/doc/PACKAGE]
-  --htmldir=DIR           html documentation [DOCDIR]
-  --dvidir=DIR            dvi documentation [DOCDIR]
-  --pdfdir=DIR            pdf documentation [DOCDIR]
-  --psdir=DIR             ps documentation [DOCDIR]
+
 _ACEOF
 
   cat <<\_ACEOF
@@ -16538,7 +16499,7 @@ CC="$lt_save_CC"
 
 
 
-ac_config_files="$ac_config_files doc/leanocrypt.1 doc/ccguess.1  m4/Makefile intl/Makefile Makefile src/Makefile emacs/Makefile check/Makefile doc/Makefile"
+ac_config_files="$ac_config_files  m4/Makefile intl/Makefile Makefile src/Makefile"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -16669,10 +16630,6 @@ if test -z "${am__fastdepCC_TRUE}" && test -z "${am__fastdepCC_FALSE}"; then
   as_fn_error $? "conditional \"am__fastdepCC\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
-
-  ac_config_commands="$ac_config_commands po/stamp-it"
-
-
 
 : "${CONFIG_STATUS=./config.status}"
 ac_write_fail=0
@@ -18034,20 +17991,19 @@ ac_sed_dataroot='
   q
 }
 /@datadir@/p
-/@docdir@/p
+
 /@infodir@/p
 /@localedir@/p
 /@mandir@/p'
 case `eval "sed -n \"\$ac_sed_dataroot\" $ac_file_inputs"` in
 *datarootdir*) ac_datarootdir_seen=yes;;
-*@datadir@*|*@docdir@*|*@infodir@*|*@localedir@*|*@mandir@*)
+*@datadir@*|*@infodir@*|*@localedir@*|*@mandir@*)
   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: $ac_file_inputs seems to ignore the --datarootdir setting" >&5
 $as_echo "$as_me: WARNING: $ac_file_inputs seems to ignore the --datarootdir setting" >&2;}
 _ACEOF
 cat >>$CONFIG_STATUS <<_ACEOF || ac_write_fail=1
   ac_datarootdir_hack='
   s&@datadir@&$datadir&g
-  s&@docdir@&$docdir&g
   s&@infodir@&$infodir&g
   s&@localedir@&$localedir&g
   s&@mandir@&$mandir&g

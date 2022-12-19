@@ -109,8 +109,6 @@ ECHO_C =
 ECHO_N = -n
 ECHO_T = 
 EGREP = /bin/grep -E
-EMACS = emacs
-EMACSLOADPATH = 
 EXEEXT = 
 EXTRA_OBJS = 
 FGREP = /bin/grep -F
@@ -219,8 +217,6 @@ infodir = ${datarootdir}/info
 install_sh = ${SHELL} /home/wvangeit/src/leanocrypt-1.10/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
-lispdir = ${datarootdir}/emacs/site-lisp
-
 # internationalization stuff
 localedir = $(datadir)/locale
 localstatedir = ${prefix}/var

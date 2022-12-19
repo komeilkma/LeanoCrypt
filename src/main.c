@@ -29,12 +29,12 @@ cmdline cmd;
 /* print usage information */
 
 static void usage(FILE *fout) {
-  fprintf(fout, _("%s %s. Secure encryption and decryption developed for Leanotek .\n"), NAMEleanocrypt, VERSION);
+  fprintf(fout, _("%s %s. Secure encryption and decryption developed for Leanotek .\n"), "LeanoCrypt", "1.0.0");
   fprintf(fout, "\n");
   fprintf(fout,
 _("Usage: %s [Command] [options] [file]\n"
 "       %s [options] [file]\n"
-"       %s [options] [file]\n\n"), NAMEleanocrypt, NAMEENCRYPT, NAMEDECRYPT, NAMECAT);
+"       %s [options] [file]\n\n"), "LeanoCrypt", NAMEENCRYPT, NAMEDECRYPT, NAMECAT);
   fprintf(fout,
 _("Commands:\n"
 "    -e       encrypt\n"
@@ -69,12 +69,12 @@ _("Commands:\n"
 
 /* print version and copyright information */
 static void version(FILE *fout) {
-  fprintf(fout, _("%s %s. Secure encryption and decryption developed for Leanotek.\n"), NAMEleanocrypt, VERSION);
+  fprintf(fout, _("%s %s. Secure encryption and decryption developed for Leanotek.\n"), "LeanoCrypt", "1.0.0");
   fprintf(fout, _("Copyright (C) Komeil Majidi.\n"));
 }
 
 static void license(FILE *fout) {
-  fprintf(fout, _("%s %s. Secure encryption and decryption developed for Leanotek.\n"), NAMEleanocrypt, VERSION);
+  fprintf(fout, _("%s %s. Secure encryption and decryption developed for Leanotek.\n"), "LeanoCrypt", "1.0.0");
   fprintf(fout, _("Copyright (C) Komeil Majidi.\n"));
   fprintf(fout, "\n");
   fprintf(fout,
@@ -189,7 +189,7 @@ static cmdline read_commandline(int ac, char *av[]) {
   } else if (!strcmp(cmd.name, NAMECAT)) {
     cmd.mode = CAT;
   } else {
-    cmd.name = av[0] = NAMEleanocrypt;
+    cmd.name = av[0] = "LeanoCrypt";
   }
 
   while ((c = getopt_long(ac, av, shortopts, longopts, NULL)) != -1) {
